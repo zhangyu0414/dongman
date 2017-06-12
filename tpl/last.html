@@ -1,0 +1,239 @@
+<div ng-include="'tpl/include/head.html'"></div>
+<style>
+  /*div{*/
+  /*box-shadow:0 0 5px;*/
+  /*}*/
+</style>
+<section id="section">
+  <div class="container">
+    <div class="row bg-opacity">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-1 hidden-xs hidden-sm">
+            <img class="img-circle img-max" ng-src="img/{{img}}"
+                 src="img/c7ee8126a426c04e5690e26895312ca219336a61.jpg_52x52.jpg"/>
+          </div>
+          <div class="col-xs-11">
+            <ul class="nav nav-pills">
+              <li ng-click="goType()" class="text-people-type"><a class="active" href=""><img src="img/1zixun.png" alt=""/> 主页</a></li>
+              <li ng-click="goMove()" class="text-people-type"><a href=""><img src="img/4htjs.png" alt=""/> 视频</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="thumbnail padding-bottom-10">
+              <div class="stitle">
+                <span class="text-plur padding-top-bottom-10 display-in-bl">
+                  <img class="display-in-bl" src="img/tbg2.png"/> 个人介绍
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="panel panel-default border-transparent-1">
+                        <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6">
+                          <div class="media">
+                            <div class="media-left media-middle hidden-xs media-35-num">
+                              <a href=""><img src="img/292fe7081589f53c1437a8cc2d1f9d9d4fdc4d64.jpg_280x175.jpg"
+                                              alt=""/></a>
+                            </div>
+                            <div class="media-body">
+                              <h4><a class="a-color" href="">&nbsp;&nbsp;{{user}} 的主页</a></h4>
+
+                              <div class="thumbnail height-120 text-center border-transparent-1">
+                                <img class="width-120" src="img/theme-buy-processing.png" alt=""/><span
+                                ng-bind="notice">什么都没有留下</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="thumbnail padding-bottom-10">
+              <div class="stitle">
+                <span class="text-plur padding-top-bottom-10 display-in-bl">
+                  <img class="display-in-bl" src="img/tbg2.png"/> 收藏的视频
+                </span>
+                <div class="list-inline pull-right padding-more-15-20 hidden-xs">
+                  <a class="text-plur" ng-click="goMove()" href="">更多</a>
+                </div>
+              </div>
+              <div class="row pull-top-bottom-10">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <a class="a-color" href="#/next/1"><img src="img/05.gif" alt=""/>去收藏视频</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6" ng-repeat="obj in moveList">
+                          <div class="row height-30-num">
+                            <div class="col-xs-12">
+                              <a href="#/start/{{obj.tid}}">
+                                <img class="img-max  week" ng-src="img/{{obj.img}}" src="img/1_1344569123.jpg"/>
+                              </a>
+                            </div>
+                            <div class="col-xs-12 text-center pull-top-bottom-10">
+                              <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.name">游戏王</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="thumbnail padding-bottom-10">
+              <div class="stitle">
+                <span class="text-plur padding-top-bottom-10 display-in-bl">
+                  <img class="display-in-bl" src="img/tbg2.png"/> 历史纪录
+                </span>
+                <div class="list-inline pull-right padding-more-15-20 hidden-xs padding-2-20">
+                  <a class="text-plur border-delete" ng-click="deleteHost()" href="">清空</a>
+                </div>
+              </div>
+              <div class="row pull-top-bottom-10">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <a class="a-color" href="#/next/1"><img src="img/05.gif" alt=""/>去浏览视频</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6" ng-repeat="obj in hostList" ng-if="$index<8">
+                          <div class="row height-30-num">
+                            <div class="col-xs-12">
+                              <a href="#/start/{{obj.tid}}">
+                                <img class="img-max week" ng-src="img/{{obj.img}}" src="img/1_1344569123.jpg"/>
+                              </a>
+                            </div>
+                            <div class="col-xs-12 text-center pull-top-bottom-10">
+                              <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.name">游戏王</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<a href="">-->
+                        <!--<img class="img-max img-rounded week" src="img/1_1344569123.jpg"/>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 text-center pull-top-bottom-10">-->
+                        <!--<a href="" class="a-color">游戏王</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 hidden-xs hidden-sm">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="thumbnail padding-bottom-10">
+              <div class="stitle">
+                <span class="text-plur padding-top-bottom-10 display-in-bl">
+                   公告
+                </span>
+              </div>
+              <div class="thumbnail height-120 text-center border-transparent-1">
+                <img class="width-120" src="img/theme-buy-processing.png" alt=""/><span ng-bind="public">什么都没有留下</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div ng-include="'tpl/include/foot.html'"></div>
+<script>
+  iWidth()
+</script>

@@ -1,0 +1,362 @@
+<div ng-include="'tpl/include/head.html'"></div>
+<section id="section">
+  <div class="container">
+    <div class="row bg-opacity">
+      <div class="col-xs-2 hidden-sm hidden-xs height-100-num position-re">
+        <div class="row">
+          <div class="col-xs-12 pull-top-bottom-20">
+            <img src="img/indexlogo.png" alt=""/>
+          </div>
+          <div class="col-xs-12 hidden-md">
+            <form class="form-inline">
+              <div class="form-group has-feedback">
+                <!--<label for="left-search" class="sr-only">搜索</label>-->
+                <!--<input type="text" id="left-search" class="form-control" placeholder="搜索"/>-->
+                <!--<span class="glyphicon glyphicon-search form-control-feedback"></span>-->
+              </div>
+            </form>
+          </div>
+          <div class="col-xs-12">
+            <ul class="list-unstyled border-bottom-1">
+              <li class="text-right have-margin" ng-repeat="obj in typeList"><a href="" ng-click="jump(obj.oid,obj.one_type)" class="a-color" ng-bind="obj.one_type"></a></li>
+              <li class="divider"></li>
+            </ul>
+            <ul class="list-unstyled border-bottom-1">
+              <li class="text-right have-margin" ng-repeat="obj in typeTwoList"><a href="" ng-click="jumpTwo(obj.cid,obj.tree_type)" class="a-color" ng-bind="obj.tree_type"></a></li>
+              <li class="divider"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="bg dm-left">
+              <span class="img1 b"></span>
+              <!--<span class="text b"><img src="img/xianzilan.png" alt=""></span>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-10 col-xs-12">
+        <div class="thumbnail clear-more padding-top-bottom-15">
+          <div class="col-sm-8 col-xs-12">
+            <div class="carousel-border">
+              <div id="d1" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="item {{$index==0?'active':''}}" ng-repeat="obj in runList">
+                    <a href="#/start/{{obj.tid}}"><img class="img-max" ng-src="img/{{obj.tt_run_img}}" src="img/1_1216228611.jpg" alt=""/></a>
+                    <div class="text-height text-center"><span ng-bind="obj.tt_main"></span></div>
+                  </div>
+                </div>
+                <a class="carousel-control left text-write" data-slide="prev" data-target="#d1" href="javascript">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right text-write" data-slide="next" data-target="#d1" href="javascript">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <ul class="carousel-indicators">
+                  <li data-target="#d1" data-slide-to="0" class="active"></li>
+                  <li data-target="#d1" data-slide-to="1"></li>
+                  <li data-target="#d1" data-slide-to="2"></li>
+                  <li data-target="#d1" data-slide-to="3"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 hidden-xs">
+            <div class="row">
+              <div class="col-xs-12 pull-bottom-20 sition" ng-repeat="obj in runNextList">
+                <div class="position-re over-hidden">
+                  <a href="#/start/{{obj.tid}}">
+                    <img class="img-max img-rounded position-re z-index-0" ng-src="img/{{obj.tt_sm_img}}" src="img/1_1221017462.jpg"/>
+                  <div class="position-ab-top-0 width-100-num height-100-num over-view z-index-100" style="background:url('img/{{obj.tt_sm_img}}') no-repeat;background-size: cover;"></div>
+                  <div class="position-ab-top-0 width-100-num height-100-num z-index-200">
+                    <div ></div>
+                    <div ></div>
+                  </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 sition" ng-repeat="obj in runTreeList">
+                <div class="position-re over-hidden">
+                  <a href="#/start/{{obj.tid}}">
+                    <img class="img-max img-rounded position-re z-index-0" ng-src="img/{{obj.tt_sm_img}}" src="img/1_1221017462.jpg"/>
+                  <div class="position-ab-top-0 width-100-num height-100-num over-view z-index-100" style="background:url('img/{{obj.tt_sm_img}}') no-repeat;background-size: cover;"></div>
+                  <div class="position-ab-top-0 width-100-num height-100-num z-index-200"></div>
+                    <div></div>
+                    <div></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 padding-left-right-0 pull-bottom-20">
+          <a href=""><img class="img-max" src="img/c1_20170105.jpg"/></a>
+        </div>
+        <div class="col-xs-12 padding-left-right-0">
+          <div class="thumbnail padding-bottom-30">
+            <div class="stitle">
+              <span class="text-plur padding-top-bottom-10 display-in-bl">
+                <img class="display-in-bl" src="img/tbg2.png"/> 一周更新时间表
+              </span>
+              <div class="list-inline pull-right padding-more-15-20 hidden-xs">
+                <a href="" ng-click="weekUp(1)">周一</a>
+                <a href="" ng-click="weekUp(2)">周二</a>
+                <a href="" ng-click="weekUp(3)">周三</a>
+                <a href="" ng-click="weekUp(4)">周四</a>
+                <a href="" ng-click="weekUp(5)">周五</a>
+                <a href="" ng-click="weekUp(6)">周六</a>
+                <a href="" ng-click="weekUp(7)">周日</a>
+              </div>
+            </div>
+            <div class="row pull-top-bottom-20 theek">
+              <div class="col-sm-3 col-xs-6" ng-repeat="obj in weekList">
+                <div class="row height-30-num">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded week" ng-src="img/{{obj.tt_sm_img}}" src="img/1_1344569123.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 hidden-xs "  ng-repeat="obj in weekNextList">
+                <div class="row height-30-num">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded week" ng-src="img/{{obj.tt_sm_img}}" src="img/1_1344569123.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row padding-left-right-10">
+              <div class="col-xs-5 ">
+                <button class="btn btn-default btn-block" ng-disabled="clickPrev" ng-click="weekLeft()">上一页</button>
+              </div>
+              <div class="col-xs-5 col-xs-offset-2">
+                <button class="btn btn-default btn-block" ng-disabled="clickNext" ng-click="weekRight()">下一页</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 padding-left-right-0">
+          <div class="thumbnail padding-bottom-30">
+            <div class="stitle">
+              <span class="text-plur padding-top-bottom-10 display-in-bl">
+                <img class="display-in-bl" src="img/tbg2.png"/> 好看的动漫
+              </span>
+            </div>
+            <div class="row pull-top-bottom-20">
+              <div class="col-sm-3 col-xs-6" ng-repeat="obj in likeList">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/1_1407361811.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 hidden-xs"  ng-repeat="obj in likeNextList">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/1_1407361811.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 padding-left-right-0 pull-bottom-20">
+          <a href=""><img class="img-max" src="img/c2_20161229.jpg"/></a>
+        </div>
+        <div class="col-xs-12 padding-left-right-0 pull-bottom-20">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="thumbnail padding-bottom-30">
+                <div class="stitle">
+                  <span class="text-plur padding-top-bottom-10 display-in-bl">
+                    <img class="display-in-bl" src="img/tbg2.png"/> 人气作品
+                  </span>
+                </div>
+                <div class="row pull-top-bottom-20">
+                  <div class="col-sm-6 col-xs-12" ng-repeat="obj in goodList">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <a href="#/start/{{obj.tid}}">
+                          <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/10024.jpg"/>
+                        </a>
+                      </div>
+                      <div class="col-xs-12 text-center pull-top-bottom-10">
+                        <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 hidden-xs" ng-repeat="obj in goodNextList">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <a href="#/start/{{obj.tid}}">
+                          <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/10024.jpg"/>
+                        </a>
+                      </div>
+                      <div class="col-xs-12 text-center pull-top-bottom-10">
+                        <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="thumbnail padding-bottom-30">
+                <div class="stitle">
+                  <span class="text-plur padding-top-bottom-10 display-in-bl">
+                    <img class="display-in-bl" src="img/tbg2.png"/> 腾讯动漫
+                  </span>
+                </div>
+                <div class="row pull-top-bottom-20">
+                  <div class="col-sm-6 col-xs-12" ng-repeat="obj in chinaList">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <a href="#/start/{{obj.tid}}">
+                          <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/11003.jpg"/>
+                        </a>
+                      </div>
+                      <div class="col-xs-12 text-center pull-top-bottom-10">
+                        <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 hidden-xs" ng-repeat="obj in chinaNextList">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <a href="#/start/{{obj.tid}}">
+                          <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/11003.jpg"/>
+                        </a>
+                      </div>
+                      <div class="col-xs-12 text-center pull-top-bottom-10">
+                        <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 padding-left-right-0">
+          <div class="thumbnail padding-bottom-30">
+            <div class="stitle">
+              <span class="text-plur padding-top-bottom-10 display-in-bl">
+                <img class="display-in-bl" src="img/tbg2.png"/> 剧场
+              </span>
+            </div>
+            <div class="row pull-top-bottom-20">
+              <div class="col-sm-3 col-xs-6" ng-repeat="obj in bigList">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/1_1643526731.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 hidden-xs" ng-repeat="obj in bigNextList">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <a href="#/start/{{obj.tid}}">
+                      <img class="img-max img-rounded" ng-src="img/{{obj.tt_lg_img}}" src="img/1_1643526731.jpg"/>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 text-center pull-top-bottom-10">
+                    <a href="#/start/{{obj.tid}}" class="a-color" ng-bind="obj.tt_name">游戏王</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 hidden-md hidden-sm hidden-xs height-100-num">
+        <div class="row">
+          <div class="col-xs-12 padding-left-0 pull-bottom-20">
+            <a href=""><img class="img-max" src="img/r1_20170113.jpg" alt=""/></a>
+          </div>
+          <div class="col-xs-12 padding-left-0">
+            <div class="stitle-right">
+              <span class="text-plur padding-top-bottom-10 display-in-bl">
+                <img class="display-in-bl" src="img/tbg2.png"/> 排行榜
+              </span>
+              <span class="text-plur padding-top-bottom-10 pull-top-5 display-in-bl glyphicon glyphicon-chevron-right pull-right"></span>
+            </div>
+            <div class="row">
+              <div class="col-xs-12" ng-repeat="obj in paihangList">
+                <span class="{{$index<3?'box-media':'box-greed'}} padding-2-8" ng-bind="$index+1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<a class="a-color padding-top-bottom-10 display-in-bl" href="#/start/{{obj.tid}}" ng-bind="obj.tt_name"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="bg dm-right">
+            <span class="img a"></span>
+            <!--<span class="text b"><img src="img/xianzilan.png" alt=""></span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div ng-include="'tpl/include/foot.html'"></div>
+<script>
+  $(function() {
+    $(".bg").mouseenter(function() {
+      var thisPX = $(this).offset().left;
+      var thisPY = $(this).offset().top;
+      var boxWidth = $(this).outerWidth();
+      var boxHeight = $(this).outerHeight();
+      $(this).addClass("threeD");
+      $(".threeD").mousemove(function(event) {
+        var mouseX = event.pageX - thisPX;
+        var mouseY = event.pageY - thisPY;
+        var X;
+        var Y;
+        if (mouseX > boxWidth / 2) {
+          X = mouseX - boxWidth/2;
+        } else {
+          X = mouseX - boxWidth/2;
+        }
+        if (mouseY > boxHeight / 2) {
+          Y = boxHeight/2 - mouseY;
+        } else {
+          Y = boxHeight/2 - mouseY;
+        }
+        $(".threeD").css({
+          "-webkit-transform": "rotateY(" + X / 100 + "deg) " + "rotateX(" + Y / 100 + "deg)"
+        });
+
+        // console.log(X + "," + Y);
+      });
+    });
+    $(".bg").mouseleave(function() {
+      $(this).removeClass("threeD");
+      $(this).css({
+        "-webkit-transform": "rotateY(0deg) rotateX(0deg)"
+      });
+    });
+  });
+</script>
+

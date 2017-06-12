@@ -1,0 +1,158 @@
+<div ng-include="'tpl/include/head.html'"></div>
+<section id="section">
+  <div class="container">
+    <div class="row bg-opacity">
+      <div class="col-md-9 col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="breadcrumb">
+              <li><a href="#/first">天天动漫</a></li>
+              <li><a href="" ng-bind="numType"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="thumbnail back-opacity-6">
+          <div class="row">
+            <div class="col-xs-12 each-width pull-bottom-20">
+              <div class="scontent" id="bofqi" style="opacity: 1;">
+                <object type="application/x-shockwave-flash" class="player" data="//static.hdslb.com/play.swf" width="865" height="482" id="player_placeholder" style="visibility: visible;">
+                  <param name="bgcolor" value="#ffffff">
+                  <param name="allowfullscreeninteractive" value="true">
+                  <param name="allowfullscreen" value="true">
+                  <param name="quality" value="high">
+                  <param name="allowscriptaccess" value="always">
+                  <param name="wmode" value="direct">
+                  <param name="flashvars" value="{{videoSrc}}">
+                  <!--<param name="flashvars" value="cid=13357600&amp;aid=8123709&amp;pre_ad=0">-->
+                  <!--<param name="flashvars" value="cid=12993907&amp;aid=7915086&amp;lastplaytime=0&amp;player_type=1&amp;urlparam=module%3Dbangumi&amp;seasonId=5786&amp;episodeId=100367">-->
+                </object>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="pull-left-20">共有 <span class="text-plur" ng-bind="commentNum">443</span> 评论 <span ng-click="severMove()" class="pull-right pull-right-20" style="cursor:pointer"  ng-bind="collect">点击收藏</span></h4>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="border-bottom-1">
+                        <a class="click-inline pull-left-20 active" href="">最新评论</a><a class="click-inline" href="">热门评论</a>
+                      </div>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                          <div class="media">
+                            <div class="media-left media-middle width-10-num padding-right-25">
+                              <a href=""><img class="img-circle" ng-src="img/{{headImg}}" src="img/noface.gif" alt=""/></a>
+                            </div>
+                            <div class="media-body">
+                              <div class="textarea-overflow">
+                                <textarea ng-model="pinglun.reply" name="" cols="87" rows="5"></textarea>
+                              </div>
+                            </div>
+                            <div class="media-right media-middle width-10-num">
+                              <button class="toPinglun" ng-click="onePinglun()">发表评论</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body text-plur text-center big-text" id="noComment">
+                           <img src="img/05.gif" alt=""/><br/>还没有人评
+                        </div>
+                        <div class="panel-body" id="onePinglun" ng-repeat="obj in commentList">
+                          <div class="media">
+                            <div class="media-left width-10-num padding-right-25">
+                              <a href=""><img class="img-circle" ng-src="img/{{obj.one_img}}" src="img/noface.gif" alt=""/></a>
+                            </div>
+                            <div class="media-body border-bottom-1">
+                              <div class="pull-bottom-10"><a href="" ng-bind="obj.one_name">拓也乌龙</a></div>
+                              <p class="pull-bottom-10" ng-bind="obj.one_reply">
+                              关于这一集的脑洞，我认为有这么几种原因
+                              1.女主本人因为某种原因，在年轻的时候恋爱遇到了一些挫折，以至于她得了某种精神疾病，而在对面月台看到的女人，也就是她自己，一切都是她幻想出来的，故事最后一段女主变长发可以充分说明这一点
+                              2.还有一种可能，学长可能在买饮料的时候-出了些意外，导致被列车所撞死，女主看到的对面月台长发女人也是男主的缩影
+                              3.这是比较玄幻的可能，女主向男主表白的时候，女主进入了另一个时空，接着女主连续两次进出时空，不过时间都是男主去买饮料的时候，而女主在意外看到自杀的女人时再次变换时空，到了长发女人来到这里的时候，为什么可以这么解释呢，因为两辆列车在很短的时间内驶过不免让人心生怀疑，于是成为区分时间得界限也就是列车了。
+                              4.当然还有一种一种比较为大众所了解得可能，这段视频实际上是女主的回忆，由于年轻时感情受到了挫败，女主就跑去了地铁站自杀，死后眼睛落在了地铁站，以至于女主到处寻找别人的眼睛，想让别人了解她这段心酸故事
+                              （以上是我自己的脑洞可能有误希望大家能够喜欢）大早上打字真的累
+                              </p>
+                              <span class="sm-comment">#{{$index+1}}</span><span class="sm-comment">{{obj.one_time | date:'yy-MM-dd HH:mm'}}</span><span class="sm-comment"><a href="" ng-click="commentShow($index)">参与回复</a></span>
+                              <div class="pull-bottom-20">
+                                <div class="media" ng-repeat="value in nextCommentList" ng-if="obj.pid==value.peopleId">
+                                  <div class="media-left width-10-num padding-right-25">
+                                    <a href=""><img class="img-circle" ng-src="img/{{value.two_img}}" src="img/noface.gif" alt=""/></a>
+                                  </div>
+                                  <div class="media-body">
+                                    <div class="pull-bottom-10"><a href="" ng-bind="value.two_name">拓也乌龙</a></div>
+                                    <p ng-bind="value.two_reply">关于这一集的脑洞，我认为有这么几种原因</p>
+                                    <span class="sm-comment">{{value.two_time | date:'yy-MM-dd hh:mm'}}</span><span class="sm-comment">来自回复</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="media pull-bottom-20 hidden" id="s{{$index}}" >
+                                <div class="media-left media-middle width-10-num padding-right-25">
+                                  <a href=""><img class="img-circle" ng-src="img/{{headImg}}" src="img/noface.gif" alt=""/></a>
+                                </div>
+                                <div class="media-body">
+                                  <div class="textarea-overflow">
+                                    <textarea name="" id="" cols="87" rows="5"></textarea>
+                                  </div>
+                                </div>
+                                <div class="media-right media-middle width-10-num">
+                                  <button ng-click="twoPinglun($index,obj.pid)" class="toPinglun">发表评论</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs">
+        <div class="thumbnail back-opacity-6" id="fixd">
+          <div class="stitle">
+            <h2 class="stitle-about">&nbsp;动漫排行</h2>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6" ng-repeat="obj in paihangList | limitTo:1">
+              <div class="media">
+                <div class="media-left media-middle hidden-xs media-35-num">
+                  <a href="#/start/{{obj.tid}}"><img ng-src="img/{{obj.tt_lg_img}}" src="img/1_1535262861.jpg" alt=""/></a>
+                </div>
+                <div class="media-body">
+                  <a href="#/start/{{obj.tid}}" class="a-color"><h4 ng-bind="obj.tt_name">百花缭乱武士少女无修</h4></a>
+                  <p>标签 : <span ng-bind="obj.tt_two_type">日本</span></p>
+                  <p>看点 : <span ng-bind="obj.tt_main">日本</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6" ng-repeat="obj in paihangList" ng-if="$index!=0">
+              <div class="media">
+                <div class="media-left media-middle hidden-xs width-15-num">
+                  <span class="{{$index<3?'box-media':'box-greed'}}" ng-bind="$index+1"></span>
+                </div>
+                <div class="media-body">
+                  <a class="a-color" href="#/start/{{obj.tid}}"><h4 ng-bind="obj.tt_name">百花缭乱武士少女无修</h4></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div ng-include="'tpl/include/foot.html'"></div>
+<script>
+  $('#bofqi').children().attr('width',parseInt($('.each-width').css('width'))-33+'px')
+    .attr('height',(parseInt($('.each-width').css('width'))-4)*0.52+'px');
+  window.onresize=function(){
+    $('#bofqi').children().attr('width',parseInt($('.each-width').css('width'))-33+'px')
+                          .attr('height',(parseInt($('.each-width').css('width'))-4)*0.52+'px');
+  };
+</script>

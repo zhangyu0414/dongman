@@ -1,0 +1,161 @@
+<div class="row">
+  <div class="col-xs-12" style="background-image: url('img/2017020809351326.jpg');" id="fix-can">
+  </div>
+</div>
+<header id="head" style="background-image: url('img/newtouzhuti.jpg')">
+  <div class="z_top_container" >
+    <div class="z_top b-header-blur white">
+      <div class="b-header-mask-wrp">
+        <div class="b-header-mask-bg" style="background-image: url('img/newtouzhuti.jpg');"></div>
+        <div class="b-header-mask"></div>
+      </div>
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#/first" class="navbar-brand">
+              <span class="logo">天天动漫</span>
+            </a>
+            <a href="#logo_menu"  class="navbar-toggle hidden"><!-- 可以放进去的属性data-toggle="collapse"-->
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+          </div>
+          <div id="logo_menu" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="http://www.bilibili.com/">萌化资源</a></li>
+              <li><a href="http://www.bilibili.com/">论坛</a></li>
+              <li><a href="http://www.bilibili.com/">游戏中心</a></li>
+              <li><a href="http://www.bilibili.com/" class="hidden-sm">本站特色</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a data-toggle="modal" data-target="#logo_go">登入</a></li>
+              <li><a data-toggle="modal" class="hidden-sm" data-target="#logo_cell">注册</a></li>
+              <li><a class="hidden" ng-click="removeUser()" data-target="isHidden" href="">退出</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <div>
+                <div class="form-group has-feedback">
+                  <label for="logo_do" class="sr-only">搜索</label>
+                  <input type="text" id="logo_do" class="form-control"/>
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="content"></div>-->
+</header>
+<nav id="nav">
+  <div class="container">
+    <div class="hidden-xs">
+      <ul class="nav nav-pills">
+        <li>
+          <a  href="../myhtml/main.html" > 羁绊论坛</a>
+        </li>
+        <li>
+          <a href="#/next/4" id="e4"> 腾讯国漫</a>
+        </li>
+        <li><a href="#/next/3" id="e3"> 有妖气动漫</a></li>
+        <li><a href="#/next/2" id="e2"> 热血动漫</a></li>
+        <li><a href="#/next/1" id="e1" >动漫分类</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="logo_go" style="z-index:100000;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" data-dismiss="modal">&times</span>
+        <h3>登入</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group has-feedback">
+            <label for="user" class="control-label">账号:</label>
+            <input id="user" ng-model="user.user" type="text" class="form-control" placeholder="请输入6~12位数字或字母   已有账号xiaoming"/>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="upwd" class="control-label">密码:</label>
+            <input id="upwd" ng-model="user.upwd" type="password" class="form-control" placeholder="请输入6~12位数字或字母   已有账号的密码123456"/>
+            <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-lg btn-success btn"  ng-click="welcome()">确定</button>
+        <a class="btn-lg btn-danger btn" data-dismiss="modal">取消</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="logo_cell" style="z-index:100000;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" data-dismiss="modal">&times</span>
+        <h3>注册</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group has-feedback">
+            <label for="new_user"  class="control-label">请输入账号:</label>
+            <input id="new_user" ng-model="obj.user" type="text" class="form-control" placeholder="请输入6~12位数字或字母"/>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="new_upwd" class="control-label">请输入密码:</label>
+            <input id="new_upwd" ng-model="obj.upwd" type="password" class="form-control" placeholder="请输入6~12位数字或字母"/>
+            <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="new_reupwd" class="control-label">请再输入密码:</label>
+            <input id="new_reupwd" ng-model="robj.reupwd" type="password" class="form-control" placeholder="请输入6~12位数字或字母"/>
+            <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="new_email">请输入您的邮箱:</label>
+            <input id="new_email" ng-model="obj.email" type="text" class="form-control" placeholder="请输入有效的邮箱"/>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="new_age">请输入您的年龄:</label>
+            <input id="new_age" ng-model="obj.age" min="10" max="80" type="number" class="form-control" placeholder="请输入您的年龄"/>
+            <span class="glyphicon glyphicon-book form-control-feedback"></span>
+          </div>
+          <!--<div class="form-group has-feedback">-->
+          <!--<label for="new_birth">请输入您的生日:</label>-->
+          <!--<input id="new_birth" ng-model="date.birth" type="date" class="form-control" placeholder="请输入您的生日"/>-->
+          <!--<span class="glyphicon glyphicon-apple form-control-feedback"></span>-->
+          <!--</div>-->
+          <div id="formHidden" class="form-group text-center hidden has-feedback">
+            <span class="text-danger ">用户名重复</span><span class="text-danger glyphicon glyphicon-remove"></span>
+          </div>
+          <div id="formSuccess" class="form-group text-center hidden has-feedback">
+            <span class="text-success ">注册成功</span><span class="text-success glyphicon glyphicon-ok"></span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-lg btn-success btn" ng-click="jump()">确定</button>
+        <a class="btn-lg btn-danger btn" data-dismiss="modal">取消</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  init();
+  if(sessionStorage['user']){
+    $('[data-target="#logo_go"]').html(sessionStorage['user']).attr('href','#/last').attr('data-toggle','');
+    $('.modal').modal('hide');
+    $('[data-target="isHidden"]').removeClass('hidden');
+  }
+  $(`#e${sessionStorage['active']}`).addClass('navActive');
+</script>
+

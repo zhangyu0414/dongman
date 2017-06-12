@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天天动漫</title>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body ng-controller="parentCtrl" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<div>
+  <audio id="audio" src="mp3/good.mp3" autoplay loop></audio>
+</div>
+<div ng-view></div>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="dist/chuncai.js"></script>
+<script>
+  $.chuncai();
+</script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/ThreeCanvas.js"></script>
+<script src="js/Snow.js"></script>
+<script src="js/main.js"></script>
+<script src="js/xuehua.js"></script>
+</body>
+</html>

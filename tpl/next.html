@@ -1,0 +1,105 @@
+<div ng-include="'tpl/include/head.html'"></div>
+<section id="section">
+  <div class="container">
+    <div class="row bg-opacity">
+      <div class="col-md-9 col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="breadcrumb">
+              <li><a href="#/first">天天动漫</a></li>
+              <li><a href="" ng-bind="numType"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="thumbnail">
+              <div class="stitle">
+                <h2 class="stitle-about">&nbsp;{{numType}}</h2>
+              </div>
+              <div class="row pull-top-bottom-20" id="canHidden">
+                <div class="col-xs-12 pull-top-bottom-10" id="t3">
+                  <a class="a-color" href="">地区:</a>
+                  <a href="" class="padding-left-right-10 a-color" ng-click="jump(3,$index)" ng-repeat="obj in groupList" ng-bind="obj.tree_type"></a>
+                </div>
+                <div class="col-xs-12 pull-top-bottom-10" id="t2">
+                  <a class="a-color" href="">类型:</a>
+                  <a href="" class="padding-left-right-10 a-color" ng-click="jump(2,$index)" ng-repeat="obj in smList" ng-bind="obj.two_type"></a>
+                </div>
+                <div class="col-xs-12 pull-top-bottom-10" id="t1">
+                  <a class="a-color" href="">属性:</a>
+                  <a href="" class="padding-left-right-10 a-color" ng-click="jump(1,$index)" ng-repeat="obj in mainList" ng-bind="obj.one_type"></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <ul class="pagination">
+                    <li class="active" ng-repeat="obj in indexList"><a href="">1</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="thumbnail back-opacity-6">
+              <div class="panel panel-default">
+                <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6" ng-repeat="obj in allList">
+                  <div class="media">
+                    <div class="media-left media-middle hidden-xs">
+                      <a href="#/start/{{obj.tid}}"><img ng-src="img/{{obj.tt_lg_img}}" src="img/1_1535262861.jpg" alt=""/></a>
+                    </div>
+                    <div class="media-body">
+                      <a class="a-color" href="#/start/{{obj.tid}}"><h3 ng-bind="obj.tt_name">百花缭乱武士少女无修</h3></a>
+                      <p>地区 : <span ng-bind="obj.tt_tree_type">日本</span></p>
+                      <p>年代 : <span ng-bind="obj.tt_date | date:'yy-MM-dd'">日本</span></p>
+                      <p>标签 : <span ng-bind="obj.tt_two_type">日本</span></p>
+                      <p>播放 : <span ng-bind="obj.tt_click">日本</span></p>
+                      <p>看点 : <span ng-bind="obj.tt_main">日本</span></p>
+                      <p>简介 : <span ng-bind="obj.tt_material">故事发生在21世纪初叶的日本，此时的年号是“平诚”。虽然锁国政策已经完结，但德川幕府的统治还在继续。在富士山的山脚有一间巨大教育机构·武应学园塾。这里的部分学生对德川家进行反抗，学生会执行部称其为“丰臣狩猎”，并对其进行镇压。本作的主人公、柳生道场的代理师傅·柳生宗朗虽世代为德川效力，但他却对执行部</span></p>
+                      <p>状态 : <span class="text-plur" ng-bind="obj.tt_one_type">完结</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs">
+        <div class="thumbnail back-opacity-6" id="fixd">
+          <div class="stitle">
+            <h2 class="stitle-about">&nbsp;动漫排行</h2>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6" ng-repeat="obj in paihangList | limitTo:1">
+              <div class="media">
+                <div class="media-left media-middle hidden-xs media-35-num">
+                  <a href="#/start/{{obj.tid}}"><img ng-src="img/{{obj.tt_lg_img}}" src="img/1_1535262861.jpg" alt=""/></a>
+                </div>
+                <div class="media-body">
+                  <h4><a class="a-color" href="#/start/{{obj.tid}}" ng-bind="obj.tt_name">百花缭乱武士少女无修</a></h4>
+                  <p>标签 : <span ng-bind="obj.tt_two_type">日本</span></p>
+                  <p>看点 : <span ng-bind="obj.tt_main">日本</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body border-bottom-1 border-top-1 pull-top-bottom-10 back-opacity-6" ng-repeat="obj in paihangList" ng-if="$index!=0">
+              <div class="media">
+                <div class="media-left media-middle hidden-xs width-15-num">
+                  <span class="{{$index<3?'box-media':'box-greed'}}" ng-bind="$index+1"></span>
+                </div>
+                <div class="media-body">
+                  <h4><a class="a-color" href="#/start/{{obj.tid}}" ng-bind="obj.tt_name">百花缭乱武士少女无修</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div ng-include="'tpl/include/foot.html'"></div>
+
